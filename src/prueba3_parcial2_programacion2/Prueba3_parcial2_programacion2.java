@@ -8,6 +8,7 @@ package prueba3_parcial2_programacion2;
  *
  * @author denam
  */
+
 import javax.swing.SwingUtilities;
 public class Prueba3_parcial2_programacion2 {
 

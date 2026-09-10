@@ -8,9 +8,12 @@ package prueba3_parcial2_programacion2;
  *
  * @author denam
  */
+import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 public class programaDescargas extends JFrame {
+    private int Descargas =0;
+    
     
     private JProgressBar barra1, barra2,barra3;
     private JButton iniciar, finalizar;
@@ -87,6 +90,29 @@ public class programaDescargas extends JFrame {
         scroll.setMaximumSize(new Dimension (500, 1000));
         Medio.add(scroll);
         add(Medio,BorderLayout.WEST );
+    }
+    
+    private void iniciarDescargas(){
+        
+        barra1.setValue(0);
+        barra2.setValue(0);
+        barra3.setValue(0);
+       
+
+        Thread t1 = new Thread();
+        Thread t2 = new Thread();// agregar objetos de descarga
+        Thread t3 = new Thread();
+
+        t1.start();
+        t2.start();
+        t3.start();
+
+        agregarMensaje("Se iniciaron las 3 descargas.");
+    }
+    private void agregarMensaje(String mensaje) {
+        SwingUtilities.invokeLater(() -> {
+           salida.append(mensaje  + "\n");
+        });
     }
     
     
